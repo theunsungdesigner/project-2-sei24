@@ -4,9 +4,10 @@ const mongoose = require('./connection.js')
 const CommunityModelSchema = new mongoose.Schema({
  eventName: String,
  date: Date,
- donationType: String,
+ corporatePartner: Boolean,
+ localPartner: Boolean,
+ religousPartner: Boolean,
  paragraph: String,
- religousOrganization: Boolean,
 })
 
 
