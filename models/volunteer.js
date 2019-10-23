@@ -4,7 +4,7 @@ const mongoose = require('./connection.js')
 const VolunteerModelSchema = new mongoose.Schema({
 name: String,
 date: Date,
-time: time,
+time: String,
 eventType: String,
 })
 
