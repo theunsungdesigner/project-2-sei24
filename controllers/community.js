@@ -2,8 +2,10 @@
 const express = require('express')
 
 const communityApi = require('../models/community.js')
+const volunteerRouter = require('../models/volunteer.js')
 
 const communityRouter = express.Router()
+
 
 /* Step 4
  * 
@@ -74,5 +76,6 @@ communityRouter.get('/', (req, res) => {
  *
  */
 module.exports = {
-  communityRouter
+  communityRouter,
+  volunteerRouter
 }
