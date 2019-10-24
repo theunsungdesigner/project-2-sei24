@@ -1,4 +1,4 @@
-<h1>Edit community</h1>
+<h1>Edit your event</h1>
 
 <form action="/community/{{singleCommunity._id}}?_method=PUT" method="POST">
     <input type="text" name="eventName" placeholder="event name" value="{{singleCommunity.eventName}}"/>
@@ -6,7 +6,7 @@
     <input type="Boolean" name="corporatePartner" placeholder="are you a corporate sponsor?" value="{{singleCommunity.corporateSponsor}}"/>
     <input type="Boolean" name="localPartner" placeholder="are you a local sponsor?" value="{{singleCommunity.localPartner}}"/>
     <input type="Boolean" name="relgiousPartner" placeholder="are you a religious organization?" value="{{singleCommunity.religiousPartner}}"/>
-    <input type="text" name="paragraph" placeholder="event description" value="{{singleCommunity.paragraph}}"/>
+    <input type="text" name="paragraph" maxlength="250" placeholder="event description" value="{{singleCommunity.paragraph}}"/>
     
 
     <input type="submit" value="Save"/>
