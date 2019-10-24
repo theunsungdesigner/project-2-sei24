@@ -37,9 +37,7 @@ const deleteCommunity = (id) => {
   return CommunityCollection.deleteOne({_id: id})
 }
 
-function getHelloWorldString() {
-  return 'hello world'
-}
+
 
 
 module.exports = {
@@ -47,6 +45,6 @@ module.exports = {
   getOneCommunity,
   createCommunity,
   updateCommunity,
-  deleteCommunity,
-  getHelloWorldString
+  deleteCommunity
+  
 }
