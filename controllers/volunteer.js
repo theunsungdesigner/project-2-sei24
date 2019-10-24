@@ -16,13 +16,13 @@ volunteerRouter.get('/volunteer/test',(req, res) => {
 })
 
 volunteerRouter.get('/volunteer/new', (req,res)=>{
-  res.render('volunteer/createVolunteerForm')
+  res.render('volunteerViews/createVolunteerForm')
 })
 
 volunteerRouter.get('/volunteer/edit/:id',(req,res)=>{
   volunteerApi.getOneVolunteer(req.params.id)
-  .then((singlevolunteer)=>{
-    res.render('movie/editVolunteerForm',{singleVolunteer})
+  .then((singleVolunteer)=>{
+    res.render('volunteerViews/editVolunteerForm',{singleVolunteer})
   })
 })
 
@@ -30,7 +30,7 @@ volunteerRouter.get('/volunteer/edit/:id',(req,res)=>{
 volunteerRouter.get('/volunteer', (req, res) => {
   volunteerApi.getAllVolunteer()
     .then((allVolunteer) => {
-      res.render('volunteer/allVolunteer',{allVolunteer})
+      res.render('volunteerViews/allVolunteer',{allVolunteer})
     })
 })
 
@@ -38,7 +38,7 @@ volunteerRouter.get('/volunteer', (req, res) => {
 volunteerRouter.get('/volunteer/:id', (req, res) => {
   volunteerApi.getOneVolunteer(req.params.id)
     .then((singleVolunteer) => {
-     res.render('volunteer/singleVolunteer',{singleVolunteer})
+     res.render('volunteerViews/singleVolunteer',{singleVolunteer})
       // res.json(singleVolunteer)
     })
 })
@@ -51,6 +51,15 @@ volunteerRouter.put('/volunteer/:id', (req, res) => {
       // res.redirect(`/volunteer/${req.params.id}`)
     })
 })
+
+// create
+volunteerRouter.post('/volunteer', (req, res) => {
+  volunteerApi.createVolunteer(req.body)
+    .then((createdVolunteer) => {
+      res.redirect("/volunteer")
+    })
+})
+
 //delete
 volunteerRouter.delete('/volunteer/:id', (req, res) => {
   volunteerApi.deleteVolunteer(req.params.id)

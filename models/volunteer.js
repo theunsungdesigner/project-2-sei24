@@ -6,6 +6,7 @@ name: String,
 date: Date,
 time: String,
 eventType: String,
+paragraph: String
 })
 
 

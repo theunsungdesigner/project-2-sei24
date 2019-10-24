@@ -1,0 +1,8 @@
+<h1>Edit your Volunteer event</h1>
+
+<form action="/volunteer/{{singleVolunteer._id}}?_method=PUT" method="POST">
+    <input type="text" name="name" placeholder="volunteer event" value="{{singleVolunteer.name}}"/>
+    <input type="date" name="date" placeholder="date of event" value="{{singleVolunteer.date}}"/>
+    <input type="text" name="paragraph" maxlength="250" placeholder="volunteer description" value="{{singleVolunteer.paragraph}}"/>
+     <input type="submit" value="Save"/>
+</form>
