@@ -1,0 +1,27 @@
+<h1>{{singleCommunity.eventName}}</h1>
+<p>Name: {{singleCommunity.eventName}}</p>
+<p>date: {{singleCommunity.date}}</p>
+<p>corporate partner: {{singleCommunity.corporatePartner}}</p>
+<p>local partner: {{singleCommunity.localPartner}}</p>
+<p>religous partner:{{singleCommunity.religiousPartner}}</p>
+<p>paragraph: {{singleCommunity.paragraph}}</p>
+
+
+
+<a href="/community/edit/{{singleCommunity._id}}">
+
+    <button>
+        Edit event
+    </button>
+</a>
+
+<form action="/community/{{singleCommunity._id}}?_method=DELETE" method="POST">
+<input type="submit" value="Delete Community">
+</form>
+
+<a href="/community/{{_id}}">
+
+    <button>
+        home
+    </button>
+</a>

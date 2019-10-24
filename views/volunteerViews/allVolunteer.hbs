@@ -1,0 +1,13 @@
+<h1>All Volunteer Events</h1>
+<a href="/volunteer/new">
+    <button class="create-new-community">
+        Create New volunteer event
+    </button>
+</a>
+
+{{#each allVolunteer}}
+<a href="/volunteer/{{_id}}">
+    <p>{{name}}</p>
+</a>
+
+{{/each}}
