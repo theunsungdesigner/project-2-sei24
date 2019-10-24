@@ -41,11 +41,7 @@ function getHelloWorldString() {
   return 'hello world'
 }
 
-/* Step 5
- *
- * TODO: export all functions from this file by adding their names as keys to this
- * object
- */
+
 module.exports = {
   getAllCommunity,
   getOneCommunity,

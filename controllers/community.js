@@ -2,7 +2,6 @@
 const express = require('express')
 
 const communityApi = require('../models/community.js')
-const volunteerRouter = require('../models/volunteer.js')
 
 const communityRouter = express.Router()
 
@@ -13,25 +12,25 @@ const communityRouter = express.Router()
  */
 
 communityRouter.get('/community/test',(req, res) => {
-  res.render('community/hello')
+  res.render('hello')
 })
 
 communityRouter.get('/community/new', (req,res)=>{
-  res.render('community/createCommunityForm')
+  res.render('createCommunityForm')
 })
 
 communityRouter.get('/community/edit/:id',(req,res)=>{
   communityApi.getOneCommunity(req.params.id)
   .then((singleCommunity)=>{
-    res.render('movie/editCommunityForm',{singleCommunity})
+    res.render('editCommunityForm',{singleCommunity})
   })
 })
 
 // getAll
 communityRouter.get('/community', (req, res) => {
-  movieApi.getAllCommunity()
+  communityApi.getAllCommunity()
     .then((allCommunity) => {
-      res.render('community/allCommunity',{allCommunity})
+      res.render('allCommunity',{allCommunity})
     })
 })
 
@@ -39,8 +38,8 @@ communityRouter.get('/community', (req, res) => {
 communityRouter.get('/community/:id', (req, res) => {
   communityApi.getOneCommunity(req.params.id)
     .then((singleCommunity) => {
-     res.render('community/singleCommunity',{singleCommunity})
-      // res.json(singleMovie)
+     res.render('singleCommunity',{singleCommunity})
+      // res.json(singleCommunity)
     })
 })
 
@@ -50,6 +49,14 @@ communityRouter.put('/community/:id', (req, res) => {
     .then((updatedCommunity) => {
       res.json(updatedCommunity)
       // res.redirect(`/community/${req.params.id}`)
+    })
+})
+
+// create
+communityRouter.post('/community', (req, res) => {
+  communityApi.createCommunity(req.body)
+    .then((createdCommunity) => {
+      res.redirect("/community")
     })
 })
 //delete
@@ -62,20 +69,8 @@ communityRouter.delete('/community/:id', (req, res) => {
 })
 
 
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
-communityRouter.get('/', (req, res) => {
-  res.send(templateApi.getHelloWorldString())
-})
 
-/* Step 6
- *
- * Export the router from the file.
- *
- */
+
 module.exports = {
-  communityRouter,
-  volunteerRouter
+  communityRouter
 }
