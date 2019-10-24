@@ -16,13 +16,13 @@ communityRouter.get('/community/test',(req, res) => {
 })
 
 communityRouter.get('/community/new', (req,res)=>{
-  res.render('createCommunityForm')
+  res.render('communityViews/createCommunityForm')
 })
 
 communityRouter.get('/community/edit/:id',(req,res)=>{
   communityApi.getOneCommunity(req.params.id)
   .then((singleCommunity)=>{
-    res.render('editCommunityForm',{singleCommunity})
+    res.render('communityViews/editCommunityForm',{singleCommunity})
   })
 })
 
@@ -30,7 +30,7 @@ communityRouter.get('/community/edit/:id',(req,res)=>{
 communityRouter.get('/community', (req, res) => {
   communityApi.getAllCommunity()
     .then((allCommunity) => {
-      res.render('allCommunity',{allCommunity})
+      res.render('communityViews/allCommunity',{allCommunity})
     })
 })
 
@@ -38,7 +38,7 @@ communityRouter.get('/community', (req, res) => {
 communityRouter.get('/community/:id', (req, res) => {
   communityApi.getOneCommunity(req.params.id)
     .then((singleCommunity) => {
-     res.render('singleCommunity',{singleCommunity})
+     res.render('communityViews/singleCommunity',{singleCommunity})
       // res.json(singleCommunity)
     })
 })
