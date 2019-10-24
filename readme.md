@@ -6,6 +6,10 @@ this full stack application has been built to showcase Community-U as a platform
   <img src="/images/communityU" width="350" title="Community-U Wireframe">
   <img src="/images/communityU" width="350" alt="Community-U Wireframe">
 </p>
+
+# link to application 
+http://community-u.herokuapp.com/
+
 1. `npm install`
 1. `node ./server.js`
 1. In a new terminal run `curl localhost:3000/community-u`. You should see
