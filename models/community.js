@@ -4,9 +4,9 @@ const mongoose = require('./connection.js')
 const CommunityModelSchema = new mongoose.Schema({
  eventName: String,
  date: Date,
- corporatePartner: Boolean,
- localPartner: Boolean,
- religousPartner: Boolean,
+ corporatePartner: String,
+ localPartner: String,
+ religousPartner: String,
  paragraph: String,
 })
 
@@ -45,6 +45,6 @@ module.exports = {
   getOneCommunity,
   createCommunity,
   updateCommunity,
-  deleteCommunity
+  deleteCommunity,
   
 }
