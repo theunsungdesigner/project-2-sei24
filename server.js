@@ -18,7 +18,9 @@ const methodOverride = require('method-override')
  *
  */
 const { communityRouter } = require('./controllers/community.js')
-
+const { volunteerRouter } = require('./controllers/volunteer.js')
+// const { foodDonationRouter } = require('./controllers/foodDonation.js')
+// const { clothingDonationRouter } = require('./controllers/clothingDonation.js')
 
 /* Step 3
  *
@@ -61,7 +63,14 @@ app.set('view engine', 'hbs')
  * add router for the application to use. The first argument is a prefix to all
  * the paths defined in the router.
  */
+
+ // app.use('/', landingRouter)
+
 app.use('/', communityRouter)
+app.use('/', volunteerRouter)
+// app.use('/', foodDonationRouter)
+// app.use('/', clothingDonationRouter)
+
 
 /* Step 5
  *
