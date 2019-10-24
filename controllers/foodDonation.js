@@ -16,7 +16,7 @@ foodDonationRouter.get('/foodDonation/test',(req, res) => {
 })
 
 foodDonationRouter.get('/foodDonation/new', (req,res)=>{
-  res.render('foodDonationViews/createfoodDonationForm')
+  res.render('foodDonationViews/createFoodDonationForm')
 })
 
 foodDonationRouter.get('/foodDonation/edit/:id',(req,res)=>{
@@ -84,6 +84,5 @@ foodDonationRouter.get('/', (req, res) => {
  *
  */
 module.exports = {
-  foodDonationRouter,
-  
+  foodDonationRouter
 }
