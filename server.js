@@ -19,7 +19,7 @@ const methodOverride = require('method-override')
  */
 const { communityRouter } = require('./controllers/community.js')
 const { volunteerRouter } = require('./controllers/volunteer.js')
-// const { foodDonationRouter } = require('./controllers/foodDonation.js')
+const { foodDonationRouter } = require('./controllers/foodDonation.js')
 // const { clothingDonationRouter } = require('./controllers/clothingDonation.js')
 
 /* Step 3
@@ -68,7 +68,7 @@ app.set('view engine', 'hbs')
 
 app.use('/', communityRouter)
 app.use('/', volunteerRouter)
-// app.use('/', foodDonationRouter)
+app.use('/', foodDonationRouter)
 // app.use('/', clothingDonationRouter)
 
 
