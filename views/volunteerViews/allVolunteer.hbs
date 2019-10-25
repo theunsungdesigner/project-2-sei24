@@ -1,13 +1,18 @@
+<span class="container">
 <h1>All Volunteer Events</h1>
+<div class="containerId">
 <a href="/volunteer/new">
-    <button class="create-new-community">
+</div>
+    <button class="waves-effect waves-light btn-large">
         Create New volunteer event
     </button>
 </a>
-
+<div class="event-style">
 {{#each allVolunteer}}
 <a href="/volunteer/{{_id}}">
     <p>{{name}}</p>
 </a>
 
 {{/each}}
+</div>
+</span>
